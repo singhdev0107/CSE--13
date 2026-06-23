@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Product Grid</title>
+<style>
+body{ font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+.grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+.grid-item{ background-color: #2563eb; color: white; padding: 30px 0; border-radius: 8px; font-weight: bold; }
+
+/* breakpoints: 4 cols desktop -> 2 cols tablet -> 1 col mobile */
+@media (max-width: 768px){
+.grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px){
+.grid{ grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<h1>Our Products</h1>
+<div class="grid">
+<div class="grid-item">Product 1</div>
+<div class="grid-item">Product 2</div>
+<div class="grid-item">Product 3</div>
+<div class="grid-item">Product 4</div>
+<div class="grid-item">Product 5</div>
+<div class="grid-item">Product 6</div>
+<div class="grid-item">Product 7</div>
+<div class="grid-item">Product 8</div>
+</div>
+</body>
+</html>
