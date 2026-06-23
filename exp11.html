@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hamburger Navbar</title>
+<style>
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+body{ font-family: Arial, sans-serif; }
+.navbar{ display: flex; justify-content: space-between; align-items: center; background-color: #111827; padding: 14px 24px; position: relative; }
+.logo{ color: white; font-size: 1.3rem; font-weight: bold; }
+/* hidden checkbox used purely to track open/closed state */
+.menu-toggle{ display: none; }
+.hamburger{ display: none; color: white; font-size: 1.6rem; cursor: pointer; }
+.nav-links{ display: flex; list-style: none; gap: 20px; }
+.nav-links a{ color: white; text-decoration: none; font-weight: 500; }
+.nav-links a:hover{ color: #93c5fd; }
+@media (max-width: 600px){
+.hamburger{ display: block; }
+.nav-links{ display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background-color: #111827; padding: 16px; text-align: center; gap: 14px; }
+.menu-toggle:checked ~ .nav-links{ display: flex; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="logo">MySite</div>
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="hamburger">&#9776;</label>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+<p style="text-align:center; margin-top: 40px;">Shrink the browser window below 600px to see the hamburger menu.</p>
+</body>
+</html>
