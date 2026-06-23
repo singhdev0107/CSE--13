@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Calculator</title>
+<style>
+body{ font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 40px; }
+.calc{ background: #1f2937; padding: 20px; border-radius: 10px; width: 260px; }
+.calc input{ width: 100%; padding: 10px; font-size: 1.2rem; margin-bottom: 10px; border-radius: 6px; border: none; text-align: right; }
+.calc .row{ display: flex; gap: 8px; margin-bottom: 8px; }
+.calc button{ flex: 1; padding: 12px; font-size: 1rem; border: none; border-radius: 6px; background: #374151; color: white; cursor: pointer; }
+.calc button:hover{ background: #4b5563; }
+.calc .equals{ background: #2563eb; }
+</style>
+</head>
+<body>
+<div class="calc">
+<input type="text" id="display" disabled>
+<div class="row">
+<button onclick="press('7')">7</button>
+<button onclick="press('8')">8</button>
+<button onclick="press('9')">9</button>
+<button onclick="press('/')">/</button>
+</div>
+<div class="row">
+<button onclick="press('4')">4</button>
+<button onclick="press('5')">5</button>
+<button onclick="press('6')">6</button>
+<button onclick="press('*')">*</button>
+</div>
+<div class="row">
+<button onclick="press('1')">1</button>
+<button onclick="press('2')">2</button>
+<button onclick="press('3')">3</button>
+<button onclick="press('-')">-</button>
+</div>
+<div class="row">
+<button onclick="press('0')">0</button>
+<button onclick="clearDisplay()">C</button>
+<button class="equals" onclick="calculate()">=</button>
+<button onclick="press('+')">+</button>
+</div>
+</div>
+<script>
+function press(val){
+document.getElementById('display').value += val;
+}
+function clearDisplay(){
+document.getElementById('display').value = '';
+}
+function calculate(){
+const display = document.getElementById('display');
+try{
+display.value = eval(display.value);
+}catch(e){
+display.value = 'Error';
+}
+}
+</script>
+</body>
+</html>
